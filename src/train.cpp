@@ -2,9 +2,9 @@
 #include "train.h"
 void Train::addCage(bool light) {
   Cage* cell = new Cage;
+  cell->light = light;
   cell->next = nullptr;
   cell->prev = nullptr;
-  cell->light = light;
   if (!first) {
   first = cell;
   end = first;
@@ -21,8 +21,8 @@ void Train::addCage(bool light) {
 int Train::getLength() {
   int count = 0;
   if (first) {
-    Cage* tmp = first;
     first->light = true;
+    Cage* tmp = first;
     while (true) {
       tmp = tmp->next;
       count++;
