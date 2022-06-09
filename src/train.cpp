@@ -1,14 +1,18 @@
 // Copyright 2021 NNTU-CS
 #include "train.h"
 void Train::addCage(bool light) {
+  if (!first) {
   Cage* cell = new Cage;
   cell->next = nullptr;
   cell->prev = nullptr;
   cell->light = light;
-  if (!first) {
   first = cell;
   end = first;
   } else {
+  Cage* cell = new Cage;
+  cell->next = nullptr;
+  cell->prev = nullptr;
+  cell->light = light;
   end->next = cell;
   end->next->prev = end;
   end = end->next;
