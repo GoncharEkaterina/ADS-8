@@ -31,6 +31,7 @@ int Train::getLength() {
     tmp = tmp->next;
     if (tmp->light == true) {
     tmp->light = false;
+    break;
     }
   }
   for (int i = 0; i < count; i++) {
