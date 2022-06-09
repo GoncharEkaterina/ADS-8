@@ -20,7 +20,7 @@ void Train::addCage(bool light) {
 
 int Train::getLength() {
   int count = 0;
-  while (first) {
+  if (first) {
     Cage* tmp = first;
     first->light = true;
     while (true) {
