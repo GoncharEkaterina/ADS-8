@@ -12,7 +12,7 @@ void Train::addCage(bool light) {
   end->next = cell;
   end->next->prev = end;
   end = end->next;
-  if (!end->next) {
+  if (!(end->next)) {
   end->next = first;
   } else { first->prev = end; }
   }
