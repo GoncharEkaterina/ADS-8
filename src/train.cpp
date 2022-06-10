@@ -10,8 +10,10 @@ void Train::addCage(bool light) {
     first->next = first->prev = cell;
     cell->next = cell->prev = first;
   } else {
-    first->next = first->prev = cell;
-    cell->next = cell->prev = first;
+    first->prev->next = cell;
+    cell->prev = first->prev;
+    first->prev = cell;
+    cell->next = first;
   }
 }
 
